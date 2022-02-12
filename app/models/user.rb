@@ -21,4 +21,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+         #dependent :destroy means that all associated posts of a user will be destroyed when user destroyed 
+  has_many :posts, dependent: :destroy 
 end
