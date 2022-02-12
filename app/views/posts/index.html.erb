@@ -1,7 +1,16 @@
-<% @posts.each do |post| %>
-  <a href=<%="/posts/#{post.id}/"%>>
-   <div class='post'>
-     <p class='post-user'>Namey McName</p>
-   </div>
- </a>
-<% end %>
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <p>
+      <p class='post-message'><%= post.message %></p>
+      <p class='post-time'><%= post.created_at.strftime("%-d %b %Y" + ' at ' + "%H:%M") %></p>
+      <%= link_to "Edit Post", post %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New post", new_post_path %>

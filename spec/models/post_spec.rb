@@ -7,11 +7,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+require 'rails_helper'
 
-one:
-  description: MyString
-  user_id: 1
-
-two:
-  description: MyString
-  user_id: 1
+RSpec.describe Post, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
