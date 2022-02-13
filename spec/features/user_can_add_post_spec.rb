@@ -7,7 +7,7 @@ RSpec.feature "timeline", type: :feature do
     click_link "New post"
 
     page.attach_file("post_image", Rails.root + 'app/assets/images/Img_1.jpeg') 
-    fill_in "Message", with: "this is a caption"
+    find(:xpath, "//*[@id='post_message']").set "this is a caption"
 
     click_button "Submit" 
 

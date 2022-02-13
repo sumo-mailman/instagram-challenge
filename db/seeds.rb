@@ -8,11 +8,20 @@
 
 
 user1 = User.create!(
+  name: "Josh Lim",
   email: "josh@gmail.com",
   password: "password"
 )
 
 user2 = User.create!(
+  name: "Linda H",
   email: "linda@gmail.com",
   password: "password"
 )
+
+# post1 = Post.create!(
+#   message: "this is a sweet post",
+#   image: File.open(Rails.root + '/app/assets/images/Img_1.jpeg'),
+#   user_id: 1
+# )
+

@@ -2,14 +2,19 @@
 
 <br>
 
-<div class='enter-post'>    
-  <%= bootstrap_form_for(@post) do |form| %>
-    <%= form.file_field :image  %>
-    <%= form.text_field :message, placeholder: "Caption it!" %>
-    <%= form.submit "Submit" %>
-  <% end %>
-</div>
+<%= form_for Post.new do |f| %>
+  <div class="form-group">
+    <%= f.text_field :message %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :image %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :user_id, value: current_user.id, class:'d-none'%>
+  </div>
+  <br>
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
 
-<div>
-  <%= link_to "Back to posts", posts_path %>
-</div>
+  </div>
+<% end %>
