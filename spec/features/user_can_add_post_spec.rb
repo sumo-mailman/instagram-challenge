@@ -2,8 +2,20 @@ require 'rails_helper'
 
 RSpec.feature "timeline", type: :feature do
   scenario "User can add posts" do 
-    post = Post.create(message: "Hello, world!")
-    visit "posts"
-    expect(page).to have_content("Hello, world!")
+    user_sign_up_and_log_in
+
+    click_link "New post"
+
+    page.attach_file("post_image", Rails.root + 'app/assets/images/Img_1.jpeg') 
+    fill_in "Message", with: "this is a caption"
+
+    click_button "Submit" 
+
+    expect(page).to have_content("Post was successfully created")
+
+    visit '/'
+    
+    expect(page).to have_content "this is a caption"
+
   end 
 end 

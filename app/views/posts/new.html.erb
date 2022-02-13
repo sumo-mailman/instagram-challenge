@@ -4,8 +4,8 @@
 
 <div class='enter-post'>    
   <%= bootstrap_form_for(@post) do |form| %>
-    <%= form.text_field :message, placeholder: "What's on your mind?" %>
     <%= form.file_field :image  %>
+    <%= form.text_field :message, placeholder: "Caption it!" %>
     <%= form.submit "Submit" %>
   <% end %>
 </div>

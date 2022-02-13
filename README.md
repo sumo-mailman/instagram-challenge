@@ -25,3 +25,4 @@ Things you may want to cover:
 
 # To Do 
 1. Find a way to customise error messages in Devise. Example - when logging in with an email that's not in the user database, no message is show but just doesn't allow you to click through.
+2. How to write a test for seeing if an image is on the website or not? 
